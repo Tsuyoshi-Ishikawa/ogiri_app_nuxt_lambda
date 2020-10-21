@@ -1,0 +1,27 @@
+version: '3'
+
+networks:
+  ogiri-network:
+    driver: bridge
+
+services:
+  nuxt:
+    # Dockerfileの場所
+    build: ./nuxt
+    image: ogiri-nuxt-img
+    container_name: "ogiri_nuxt_app"
+    environment: 
+      - HOST=0.0.0.0
+    tty: true
+    # コンテナ起動時のコマンド
+    #shでないとコンテナに入れない
+    command: sh -c "yarn install && yarn run dev"
+    # ホストOSとコンテナ内でソースコードを共有
+    volumes:
+      - ./nuxt:/nuxt:cached #cachedにすると処理が早くなる？
+    # コンテナ内部の80を外部から80でアクセス
+    ports:
+      - 8080:8080
+    stdin_open: true
+    networks: 
+      - ogiri-network

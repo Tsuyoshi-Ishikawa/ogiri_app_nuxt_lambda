@@ -1,0 +1,4 @@
+.vagrant
+.vscode
+mutagen.yml.lock
+.storage

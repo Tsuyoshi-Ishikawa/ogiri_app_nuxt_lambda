@@ -1,0 +1,11 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "sample-AWSSAM-ver3"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-ipd07ok77o7s"
+s3_prefix = "sample-AWSSAM-ver3"
+region = "ap-northeast-1"
+confirm_changeset = true
+capabilities = "CAPABILITY_IAM"
+

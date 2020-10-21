@@ -1,0 +1,11 @@
+sync:
+  app:
+    mode: "two-way-resolved"
+    alpha: "./"
+    beta: "ogiri/:/home/vagrant/ogiri/"
+    ignore:
+      vcs: true
+      paths:
+        - "/node_modules"
+        - "/log"
+        - "/tmp"
