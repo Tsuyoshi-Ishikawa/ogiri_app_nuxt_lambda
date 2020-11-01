@@ -63,5 +63,6 @@ Vagrant.configure('2') do |config|
   #vagrant upした時に発動する内容
   config.vm.provision :docker, run: 'always'
   config.vm.provision :docker_compose
+  #shellでshを実行
   config.vm.provision :shell, inline: script
 end

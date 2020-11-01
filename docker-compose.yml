@@ -25,3 +25,23 @@ services:
     stdin_open: true
     networks: 
       - ogiri-network
+  
+  # # ローカル開発用
+  # # https://mmtomitomimm.blogspot.com/2018/04/docker-mysqldb.html
+  # # https://qiita.com/TAMIYAN/items/ed9ec892d91e5af962c6#docker-compose-%E4%BD%BF%E7%94%A8
+  # mysql:
+  #   build: ./mysql/    #Dockerfileからビルドすることを示す
+  #   image: ogiri-mysql-img
+  #   container_name: "ogiri_mysql_app"
+  #   volumes:
+  #     - ./mysql/db:/docker-entrypoint-initdb.d  #初期データ
+  #   environment:
+  #     #環境変数,apiから叩いてもらうため必要
+  #     - MYSQL_DATABASE=sample_db
+  #     - MYSQL_USER=default
+  #     - MYSQL_PASSWORD=secret
+  #     - MYSQL_ROOT_PASSWORD=root
+  #   ports:
+  #     - 3307:3307
+  #   networks: 
+  #     - ogiri-network
